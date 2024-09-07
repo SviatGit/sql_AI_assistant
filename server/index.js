@@ -1,6 +1,6 @@
 import express from "express";
 import cors from 'cors'
-import generate from "./generate";
+import generate from "./generate.js";
 
 const app = express();
 
@@ -11,8 +11,8 @@ app.use(cors());
 const port = process.env.PORT || 3005;
 
 app.get("/", (req, res) => {
-    res.send("Hello world from our API")
-})
+    res.send("Hello world from our API");
+});
 
 app.post("/generate", async (req, res) => {
     const queryDescription = req.body.queryDescription
